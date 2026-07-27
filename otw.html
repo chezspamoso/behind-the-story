@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTW Production — BEHIND THE STORY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" style="text-decoration:none;">
+    <div class="wordmark" style="color:var(--cream);">BEHIND<br>THE STORY</div>
+  </a>
+  <nav>
+    <a href="spamoso.html">Spamoso</a>
+    <a href="rtbf.html">RTBF</a>
+    <a href="nesprod.html">NES Prod</a>
+    <a href="otw.html">OTW</a>
+    <a href="reste.html">Le reste</a>
+  </nav>
+</header>
+
+<section class="category" id="top" style="border-top:none;">
+  <div class="cat-hero">
+    <div class="grain"></div>
+    <a href="index.html" class="back-link">← Retour aux univers</a>
+    <div class="cat-logo-note">[ logo OTW Production à intégrer ]</div>
+    <h2>OTW Production</h2>
+    <p>Mon expérience actuelle en création de contenus : réseaux sociaux, montage vidéo, recherche de tendances et stratégie de contenu.</p>
+  </div>
+
+  <div class="cat-body">
+    <div class="label-row">
+      <div class="label">Projets</div>
+      <div class="label">04 réalisations</div>
+    </div>
+
+    <div class="proj-grid">
+
+      <div class="proj-card" onclick="openModal({
+          title:'Rapport de stage',
+          desc:'Bilan complet du stage chez OTW Production.',
+          category:'OTW Production',
+          link:'',
+          linkLabel:'clic = ouvre le rapport de stage'
+        })">
+        <div class="proj-thumb-note">miniature à ajouter</div>
+        
+        <div class="proj-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="proj-info">
+          <div class="proj-title">Rapport de stage</div>
+          <div class="proj-desc">Description courte à venir</div>
+        </div>
+      </div>
+
+      <div class="proj-card" onclick="openModal({
+          title:'Maître Makifornia',
+          desc:'Vidéos réalisées avec Maître Makifornia pour OTW Production.',
+          category:'OTW Production',
+          link:''
+        })">
+        <div class="proj-thumb-note">miniature à ajouter</div>
+        
+        <div class="proj-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="proj-info">
+          <div class="proj-title">Maître Makifornia</div>
+          <div class="proj-desc">Description courte à venir</div>
+        </div>
+      </div>
+
+      <div class="proj-card" onclick="openModal({
+          title:'RNBoi — Parc des Princes',
+          desc:'Avec Skyrock et Planet Rap — assistant sur le projet.',
+          category:'OTW Production',
+          link:''
+        })">
+        <div class="proj-thumb-note">miniature à ajouter</div>
+        
+        <div class="proj-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="proj-info">
+          <div class="proj-title">RNBoi — Parc des Princes</div>
+          <div class="proj-desc">Description courte à venir</div>
+        </div>
+      </div>
+
+      <div class="proj-card" onclick="openModal({
+          title:'Affiche Silent Party Belgium',
+          desc:'Réalisation d'affiche pour Silent Party Belgium.',
+          category:'OTW Production',
+          link:''
+        })">
+        <div class="proj-thumb-note">miniature à ajouter</div>
+        
+        <div class="proj-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="proj-info">
+          <div class="proj-title">Affiche Silent Party Belgium</div>
+          <div class="proj-desc">Description courte à venir</div>
+        </div>
+      </div>
+
+      <!-- Pour ajouter un projet : copier-coller un bloc .proj-card entier
+           et changer title / desc / link / year / le texte affiché. -->
+
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="modalOverlay">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <div class="modal-box">
+    <a class="modal-video" id="modalVideoLink" href="#" target="_blank" rel="noopener">
+      <div class="modal-video-note" id="modalVideoNote">clic = ouvre la vidéo source</div>
+      <div class="proj-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </a>
+    <div class="modal-info">
+      <div class="eyebrow" id="modalEyebrow">OTW Production</div>
+      <div class="modal-title" id="modalTitle">Titre du projet</div>
+      <div class="modal-desc" id="modalDesc">Description du projet.</div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
