@@ -29,8 +29,8 @@
     justify-content:space-between;
     align-items:center;
     padding:22px 40px;
-    background:#FFFFFF;
-    box-shadow:0 1px 0 rgba(10,10,10,0.06);
+    background:#0A0A0A;
+    box-shadow:0 1px 0 rgba(255,255,255,0.06);
     transition:transform .4s ease;
   }
   header.header-hidden{
@@ -43,7 +43,8 @@
     letter-spacing:0.06em;
     line-height:1.15;
     text-transform:uppercase;
-    color:var(--bg);
+    color:var(--cream);
+    transition:color .25s ease;
   }
 
   nav{
@@ -55,17 +56,18 @@
   }
 
   nav a{
-    color:var(--bg);
+    color:var(--cream);
     text-decoration:none;
     font-family:'IBM Plex Mono',monospace;
     font-size:10.5px;
     letter-spacing:0.06em;
     text-transform:uppercase;
-    opacity:0.6;
-    transition:opacity .25s ease;
+    opacity:0.7;
+    transition:opacity .25s ease, color .25s ease;
     white-space:nowrap;
   }
-  nav a:hover{opacity:1;}
+  nav a:hover{opacity:1; color:var(--accent);}
+  header a:hover .wordmark{color:var(--accent);}
 
   @media (max-width:900px){
     nav{display:none;}
@@ -152,7 +154,7 @@
     font-weight:400;
     text-transform:uppercase;
     line-height:0.86;
-    font-size:clamp(52px, 11vw, 168px);
+    font-size:clamp(38px, 8vw, 108px);
     letter-spacing:-0.01em;
   }
   h1.title .line1{color:var(--cream);}
@@ -160,10 +162,12 @@
     font-family:'Bodoni Moda', serif;
     font-weight:700;
     font-style:normal;
-    text-transform:uppercase;
+    text-transform:none;
     color:var(--accent);
-    letter-spacing:0;
+    font-size:0.5em;
+    letter-spacing:0.22em;
     line-height:1;
+    white-space:nowrap;
   }
 
   .tagline{
