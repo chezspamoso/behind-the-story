@@ -1,18 +1,17 @@
-// ---------- Timecode décoratif (uniquement présent sur le hero de l'accueil) ----------
+// ---------- Header qui se cache au scroll vers le bas, réapparaît en remontant ----------
 (function(){
-  const tc = document.getElementById('tc');
-  if(!tc) return;
-  let f = 0;
-  function pad(n){ return n.toString().padStart(2,'0'); }
-  setInterval(()=>{
-    f++;
-    let frames = f % 25;
-    let totalSec = Math.floor(f/25);
-    let s = totalSec % 60;
-    let m = Math.floor(totalSec/60) % 60;
-    let h = Math.floor(totalSec/3600);
-    tc.textContent = pad(h)+':'+pad(m)+':'+pad(s)+':'+pad(frames);
-  }, 40);
+  const header = document.querySelector('header');
+  if(!header) return;
+  let lastScroll = window.scrollY;
+  window.addEventListener('scroll', function(){
+    const current = window.scrollY;
+    if(current > lastScroll && current > 80){
+      header.classList.add('header-hidden');
+    } else {
+      header.classList.remove('header-hidden');
+    }
+    lastScroll = current;
+  }, {passive:true});
 })();
 
 // ---------- Navigation intelligente des projets ----------

@@ -30,6 +30,10 @@
     align-items:flex-start;
     padding:28px 40px;
     mix-blend-mode:difference;
+    transition:transform .4s ease;
+  }
+  header.header-hidden{
+    transform:translateY(-120%);
   }
 
   .wordmark{
@@ -73,7 +77,8 @@
     height:100svh;
     display:flex;
     flex-direction:column;
-    justify-content:flex-end;
+    justify-content:center;
+    align-items:center;
     overflow:hidden;
   }
 
@@ -118,34 +123,15 @@
     z-index:2;
   }
 
-  /* timecode / rec signature */
-  .timecode{
-    position:absolute;
-    top:30px;right:40px;
-    z-index:5;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    font-family:'IBM Plex Mono',monospace;
-    font-size:12px;
-    letter-spacing:0.05em;
-    color:var(--cream);
-  }
-  .rec-dot{
-    width:7px;height:7px;
-    border-radius:50%;
-    background:var(--accent);
-    animation:blink 1.4s infinite;
-  }
-  @keyframes blink{
-    0%,100%{opacity:1;}
-    50%{opacity:0.15;}
-  }
-
   .hero-content{
     position:relative;
     z-index:3;
-    padding:0 40px 64px;
+    padding:0 40px;
+    max-width:900px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
   }
 
   .eyebrow{
@@ -160,7 +146,8 @@
   h1.title{
     display:flex;
     flex-direction:column;
-    gap:0.1em;
+    align-items:center;
+    gap:0.12em;
     font-family:'Anton',sans-serif;
     font-weight:400;
     text-transform:uppercase;
@@ -169,18 +156,27 @@
     letter-spacing:-0.01em;
   }
   h1.title .line1{color:var(--cream);}
-  h1.title .line2{color:var(--accent);}
+  h1.title .line2{
+    font-family:'Bodoni Moda', serif;
+    font-weight:700;
+    font-style:normal;
+    text-transform:lowercase;
+    color:var(--accent);
+    letter-spacing:0;
+    line-height:1;
+  }
 
   .tagline{
-    margin-top:24px;
+    margin:24px auto 0;
     max-width:480px;
     font-size:15px;
     line-height:1.6;
     color:var(--muted);
+    text-align:center;
   }
 
   .signature{
-    margin-top:40px;
+    margin:40px auto 0;
     width:130px;
     opacity:0.92;
   }
@@ -191,39 +187,6 @@
   }
   @media (max-width:720px){
     .signature{width:96px;margin-top:28px;}
-  }
-
-  .scroll-cue{
-    position:absolute;
-    bottom:28px;left:40px;
-    z-index:4;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:'IBM Plex Mono',monospace;
-    font-size:10px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--muted);
-  }
-  .scroll-line{
-    width:1px;height:34px;
-    background:var(--line);
-    position:relative;
-    overflow:hidden;
-  }
-  .scroll-line::after{
-    content:'';
-    position:absolute;
-    top:-100%;left:0;
-    width:100%;height:100%;
-    background:var(--accent);
-    animation:scrollmove 2s ease-in-out infinite;
-  }
-  @keyframes scrollmove{
-    0%{top:-100%;}
-    50%{top:0%;}
-    100%{top:100%;}
   }
 
   /* ---------- UNIVERS GRID ---------- */
@@ -359,9 +322,8 @@
     .grid{grid-template-columns:repeat(2,1fr);}
     .c1,.c2,.c3,.c4,.c5{grid-column:span 2;min-height:260px;}
     header{padding:20px 22px;}
-    .hero-content{padding:0 22px 48px;}
+    .hero-content{padding:0 22px;}
     .univers{padding:80px 22px 100px;}
-    .scroll-cue{left:22px;}
   }
 
   /* ---------- CATEGORY PAGE ---------- */
