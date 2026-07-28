@@ -23,15 +23,40 @@ function openModal(data){
 
   const videoLink = document.getElementById('modalVideoLink');
   const note = document.getElementById('modalVideoNote');
+  const multiWrap = document.getElementById('modalMultiLinks');
 
-  if(data.link){
-    videoLink.href = data.link;
-    videoLink.classList.remove('is-photo');
-    note.textContent = data.linkLabel || 'clic = ouvre la vidéo source';
-  } else {
+  const links = data.links && data.links.length ? data.links : (data.link ? [data.link] : []);
+
+  multiWrap.innerHTML = '';
+
+  if(links.length === 0){
+    // aucun lien : projet en photo
     videoLink.removeAttribute('href');
     videoLink.classList.add('is-photo');
-    note.textContent = 'photo à ajouter';
+    videoLink.style.display = 'flex';
+    multiWrap.style.display = 'none';
+    note.textContent = data.pending ? 'lien à venir' : 'photo à ajouter';
+  } else if(links.length === 1){
+    // un seul lien : zone cliquable classique
+    videoLink.href = links[0];
+    videoLink.classList.remove('is-photo');
+    videoLink.style.display = 'flex';
+    multiWrap.style.display = 'none';
+    note.textContent = data.linkLabel || 'clic = ouvre la vidéo source';
+  } else {
+    // plusieurs liens : liste de boutons
+    videoLink.style.display = 'none';
+    multiWrap.style.display = 'flex';
+    note.textContent = '';
+    links.forEach((url, i) => {
+      const a = document.createElement('a');
+      a.href = url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.className = 'modal-link-item';
+      a.textContent = 'Voir la vidéo ' + (i+1);
+      multiWrap.appendChild(a);
+    });
   }
 
   document.getElementById('modalOverlay').classList.add('active');

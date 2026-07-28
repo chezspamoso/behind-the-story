@@ -43,38 +43,40 @@
 
       <div class="proj-card" onclick="openModal({
           title:'Rapport de stage',
-          desc:'Bilan complet du stage chez OTW Production.',
+          desc:'Rapport retraçant mon expérience de stage chez OTW Production, entre création de contenus et immersion en production audiovisuelle.',
           category:'OTW Production',
           link:'',
-          linkLabel:'clic = ouvre le rapport de stage'
+          linkLabel:'clic = ouvre le rapport de stage',
+          pending:true
         })">
         <div class="proj-thumb-note">miniature à ajouter</div>
         
         <div class="proj-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         <div class="proj-info">
           <div class="proj-title">Rapport de stage</div>
-          <div class="proj-desc">Description courte à venir</div>
+          <div class="proj-desc">Rapport retraçant mon expérience de stage chez OTW Production, entre création de contenus et immersion en production audiovisuelle.</div>
         </div>
       </div>
 
       <div class="proj-card" onclick="openModal({
-          title:'Maître Makifornia',
-          desc:'Vidéos réalisées avec Maître Makifornia pour OTW Production.',
+          title:'Makifornia',
+          desc:'Participation au tournage, montage vidéo, production et coordination des figurants pour le projet.',
           category:'OTW Production',
-          link:''
+          link:'',
+          links:['https://www.instagram.com/reel/DaVAvytj8Ne/?igsh=MTdpbnQ1d2x4bTZ4YQ==','https://www.instagram.com/reel/Da0HqehCCW2/?igsh=MXY0NXhxdmc2b3M0Yg==','https://www.instagram.com/reel/DbF7zvLiJmV/?igsh=MTIwZWMxYjZvOWhxaQ==']
         })">
         <div class="proj-thumb-note">miniature à ajouter</div>
         
         <div class="proj-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         <div class="proj-info">
-          <div class="proj-title">Maître Makifornia</div>
-          <div class="proj-desc">Description courte à venir</div>
+          <div class="proj-title">Makifornia</div>
+          <div class="proj-desc">Participation au tournage, montage vidéo, production et coordination des figurants pour le projet.</div>
         </div>
       </div>
 
       <div class="proj-card" onclick="openModal({
           title:'RNBoi — Parc des Princes',
-          desc:'Avec Skyrock et Planet Rap — assistant sur le projet.',
+          desc:'Assistant de production lors du tournage de RNBoi au Parc des Princes.',
           category:'OTW Production',
           link:''
         })">
@@ -83,13 +85,13 @@
         <div class="proj-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         <div class="proj-info">
           <div class="proj-title">RNBoi — Parc des Princes</div>
-          <div class="proj-desc">Description courte à venir</div>
+          <div class="proj-desc">Assistant de production lors du tournage de RNBoi au Parc des Princes.</div>
         </div>
       </div>
 
       <div class="proj-card" onclick="openModal({
           title:'Affiche Silent Party Belgium',
-          desc:'Réalisation d'affiche pour Silent Party Belgium.',
+          desc:'Création des visuels promotionnels destinés aux réseaux sociaux de l\'événement.',
           category:'OTW Production',
           link:''
         })">
@@ -98,7 +100,7 @@
         <div class="proj-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         <div class="proj-info">
           <div class="proj-title">Affiche Silent Party Belgium</div>
-          <div class="proj-desc">Description courte à venir</div>
+          <div class="proj-desc">Création des visuels promotionnels destinés aux réseaux sociaux de l'événement.</div>
         </div>
       </div>
 
@@ -116,6 +118,7 @@
       <div class="modal-video-note" id="modalVideoNote">clic = ouvre la vidéo source</div>
       <div class="proj-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
     </a>
+    <div class="modal-multi-links" id="modalMultiLinks"></div>
     <div class="modal-info">
       <div class="eyebrow" id="modalEyebrow">OTW Production</div>
       <div class="modal-title" id="modalTitle">Titre du projet</div>
