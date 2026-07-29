@@ -87,16 +87,18 @@
   .hero-bg{
     position:absolute;
     inset:0;
-    background:
-      radial-gradient(120% 90% at 20% 15%, #1c1a17 0%, #0A0A0A 55%),
-      linear-gradient(120deg,#0A0A0A,#181510,#0A0A0A);
-    background-size:200% 200%, 100% 100%;
-    animation:drift 18s ease-in-out infinite;
+    background-image:url('BEHIND-THE-STORY-ACCEUIL.jpg');
+    background-size:cover;
+    background-position:center;
+    animation:heroFadeIn 1.8s ease forwards, heroKenBurns 28s ease-in-out infinite alternate 1.8s;
   }
-  @keyframes drift{
-    0%{background-position:0% 0%, 0 0;}
-    50%{background-position:100% 60%, 0 0;}
-    100%{background-position:0% 0%, 0 0;}
+  @keyframes heroFadeIn{
+    0%{opacity:0;}
+    100%{opacity:1;}
+  }
+  @keyframes heroKenBurns{
+    0%{transform:scale(1.02) translate(0,0);}
+    100%{transform:scale(1.08) translate(-1.2%,-1%);}
   }
 
   .grain{
@@ -691,6 +693,13 @@
     font-size:14px;
     line-height:1.6;
     color:var(--muted);
+  }
+  .gallery-head .gallery-note{
+    margin-top:14px;
+    font-size:12px;
+    font-style:italic;
+    color:var(--muted);
+    opacity:0.65;
   }
 
   .gallery-grid{

@@ -80,6 +80,7 @@ function getGalleryOverlay(){
         <div class="eyebrow" id="galleryEyebrow"></div>
         <h2 id="galleryTitle"></h2>
         <p id="galleryDesc"></p>
+        <p class="gallery-note">Les contenus présentés ci-dessous constituent une sélection de ce projet et ne représentent pas l'ensemble des vidéos réalisées.</p>
       </div>
       <div class="gallery-grid" id="galleryGrid"></div>
     </div>
@@ -109,10 +110,11 @@ function openGallery(data, links){
     a.target = '_blank';
     a.rel = 'noopener';
     a.className = 'gallery-item';
+    const label = (data.videoTitles && data.videoTitles[i]) ? data.videoTitles[i] : `Vidéo ${i+1}`;
     a.innerHTML = `
       <div class="gallery-thumb-note">miniature à ajouter</div>
       <div class="proj-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-      <div class="gallery-item-title">Vidéo ${i+1}</div>
+      <div class="gallery-item-title">${label}</div>
     `;
     grid.appendChild(a);
   });
