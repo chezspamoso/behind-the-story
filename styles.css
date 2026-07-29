@@ -371,6 +371,17 @@
     margin-bottom:22px;
   }
 
+  .cat-logo{
+    position:relative;z-index:2;
+    display:block;
+    height:76px;
+    width:auto;
+    max-width:220px;
+    object-fit:contain;
+    object-position:left center;
+    margin-bottom:26px;
+  }
+
   .cat-hero h2{
     position:relative;z-index:2;
     font-family:'Anton',sans-serif;
