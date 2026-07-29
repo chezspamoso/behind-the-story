@@ -441,7 +441,7 @@
     aspect-ratio:4/5;
     border-radius:2px;
     overflow:hidden;
-    border:1px solid rgba(248,82,6,0.28);
+    border:1.5px solid rgba(248,82,6,0.8);
     background:
       repeating-linear-gradient(135deg, #17140f, #17140f 10px, #1c1812 10px, #1c1812 20px);
     cursor:pointer;
@@ -449,20 +449,25 @@
     flex-direction:column;
     justify-content:flex-end;
     text-align:left;
-    transition:border-color .3s ease;
+    transition:transform .35s ease, box-shadow .35s ease, border-color .3s ease;
   }
   .proj-card:hover{
-    border-color:rgba(248,82,6,0.55);
+    transform:scale(1.015);
+    box-shadow:0 10px 34px rgba(248,82,6,0.22);
+    border-color:var(--accent);
   }
   .proj-card.proj-card--static{
     cursor:default;
   }
   .proj-card.proj-card--static:hover{
-    border-color:rgba(248,82,6,0.28);
+    transform:none;
+    box-shadow:none;
+    border-color:rgba(248,82,6,0.8);
   }
   .proj-card::after{
     content:'';
-    position:absolute;inset:0;
+    position:absolute;
+    inset:0;
     background:linear-gradient(180deg, rgba(10,10,10,0) 40%, rgba(10,10,10,0.95) 100%);
   }
   .proj-thumb-note{
@@ -734,14 +739,14 @@
     aspect-ratio:4/5;
     border-radius:2px;
     overflow:hidden;
-    border:1px solid rgba(248,82,6,0.28);
+    border:1.5px solid rgba(248,82,6,0.8);
     background:repeating-linear-gradient(135deg, #17140f, #17140f 10px, #1c1812 10px, #1c1812 20px);
     display:flex;
     align-items:center;
     justify-content:center;
     text-decoration:none;
     color:var(--cream);
-    transition:border-color .3s ease;
+    transition:transform .35s ease, box-shadow .35s ease, border-color .3s ease;
   }
   .gallery-item::after{
     content:'';
@@ -750,7 +755,11 @@
     background:linear-gradient(180deg, rgba(10,10,10,0) 50%, rgba(10,10,10,0.88) 100%);
     pointer-events:none;
   }
-  .gallery-item:hover{border-color:rgba(248,82,6,0.55);}
+  .gallery-item:hover{
+    transform:scale(1.015);
+    box-shadow:0 10px 34px rgba(248,82,6,0.22);
+    border-color:var(--accent);
+  }
   .gallery-item .proj-play{position:relative;transform:none;z-index:2;}
   .gallery-thumb-note{
     position:absolute;
