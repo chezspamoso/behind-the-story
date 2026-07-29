@@ -111,8 +111,14 @@ function openGallery(data, links){
     a.rel = 'noopener';
     a.className = 'gallery-item';
     const label = (data.videoTitles && data.videoTitles[i]) ? data.videoTitles[i] : `Vidéo ${i+1}`;
+    const thumb = (data.videoThumbs && data.videoThumbs[i]) ? data.videoThumbs[i] : null;
+    if(thumb){
+      a.style.backgroundImage = `url('${thumb}')`;
+      a.style.backgroundSize = 'cover';
+      a.style.backgroundPosition = 'center';
+    }
     a.innerHTML = `
-      <div class="gallery-thumb-note">miniature à ajouter</div>
+      ${thumb ? '' : '<div class="gallery-thumb-note">miniature à ajouter</div>'}
       <div class="proj-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
       <div class="gallery-item-title">${label}</div>
     `;
