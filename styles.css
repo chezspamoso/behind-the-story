@@ -90,15 +90,6 @@
     background-image:url('BEHIND-THE-STORY-ACCEUIL.jpg');
     background-size:cover;
     background-position:center;
-    animation:heroFadeIn 1.8s ease forwards, heroKenBurns 28s ease-in-out infinite alternate 1.8s;
-  }
-  @keyframes heroFadeIn{
-    0%{opacity:0;}
-    100%{opacity:1;}
-  }
-  @keyframes heroKenBurns{
-    0%{transform:scale(1.02) translate(0,0);}
-    100%{transform:scale(1.08) translate(-1.2%,-1%);}
   }
 
   .grain{
